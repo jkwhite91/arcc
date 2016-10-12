@@ -22,6 +22,8 @@ int main()
 	left();
 	right();
 	back();
+
+	return 0;
 }
 
 void forward()
