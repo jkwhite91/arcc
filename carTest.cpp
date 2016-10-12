@@ -1,10 +1,17 @@
 #include <wiringPi.h>
 
-
+/***************
+ * The pins are mapped as:
+ * 0 = GP2 Front
+ * 1 = GP3
+ * 2 = GP4
+ * 3 = GP14
+ ***************/
 #define FOR 0;
-#define LEFT 1;
-#define RIGHT 2;
-#define BACK 3;
+#define BACK 1;
+#define LEFT 2;
+#define RIGHT 3;
+
 #define DELAY_INT 2000;
 
 void forward();
@@ -33,10 +40,13 @@ void forward()
 {
 	pinMode (FOR, OUTPUT);
 
+	// turns the light on
 	digitalWrite(FOR, 1);
+	// stays on for a set amount of time
 	delay(DELAY_INT);
+
+	// turns off the light
 	digitalWrite(FOR,0);
-	delay(DELAY_INT);
 
 }
 
@@ -47,8 +57,6 @@ void left()
 	digitalWrite(LEFT, 1);
 	delay(DELAY_INT);
 	digitalWrite(LEFT,0);
-	delay(DELAY_INT);
-	
 }
 
 void right()
@@ -58,8 +66,6 @@ void right()
 	digitalWrite(RIGHT, 1);
 	delay(DELAY_INT);
 	digitalWrite(RIGHT,0);
-	delay(DELAY_INT);
-	
 }
 
 void back()
@@ -69,5 +75,4 @@ void back()
 	digitalWrite(BACK, 1);
 	delay(DELAY_INT);
 	digitalWrite(BACK,0);
-	delay(DELAY_INT);
 }
