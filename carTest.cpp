@@ -2,10 +2,10 @@
 
 
 #define FOR 0;
-#define LEFT 0;
-#define RIGHT 0;
-#define BACK 0;
-#define DELAY_INT 500;
+#define LEFT 1;
+#define RIGHT 2;
+#define BACK 3;
+#define DELAY_INT 2000;
 
 void forward();
 void left();
@@ -19,8 +19,11 @@ int main()
 	wiringPiSetup();
 
 	forward();
+	
 	left();
+	
 	right();
+	
 	back();
 
 	return 0;
@@ -30,13 +33,10 @@ void forward()
 {
 	pinMode (FOR, OUTPUT);
 
-	for (;;)
-	{
-		digitalWrite(FOR, 1);
-		delay(DELAY_INT);
-		digitalWrite(FOR,0);
-		delay(DELAY_INT);
-	}
+	digitalWrite(FOR, 1);
+	delay(DELAY_INT);
+	digitalWrite(FOR,0);
+	delay(DELAY_INT);
 
 }
 
@@ -44,37 +44,30 @@ void left()
 {
 	pinMode (LEFT, OUTPUT);
 
-	for (;;)
-	{
-		digitalWrite(LEFT, 1);
-		delay(DELAY_INT);
-		digitalWrite(LEFT,0);
-		delay(DELAY_INT);
-	}
+	digitalWrite(LEFT, 1);
+	delay(DELAY_INT);
+	digitalWrite(LEFT,0);
+	delay(DELAY_INT);
+	
 }
 
 void right()
 {
 	pinMode (RIGHT, OUTPUT);
 
-	for (;;)
-	{
-		digitalWrite(RIGHT, 1);
-		delay(DELAY_INT);
-		digitalWrite(RIGHT,0);
-		delay(DELAY_INT);
-	}
+	digitalWrite(RIGHT, 1);
+	delay(DELAY_INT);
+	digitalWrite(RIGHT,0);
+	delay(DELAY_INT);
+	
 }
 
 void back()
 {
 	pinMode (BACK, OUTPUT);
 
-	for (;;)
-	{
-		digitalWrite(BACK, 1);
-		delay(DELAY_INT);
-		digitalWrite(BACK,0);
-		delay(DELAY_INT);
-	}
+	digitalWrite(BACK, 1);
+	delay(DELAY_INT);
+	digitalWrite(BACK,0);
+	delay(DELAY_INT);
 }
